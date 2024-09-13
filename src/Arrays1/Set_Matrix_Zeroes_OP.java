@@ -3,6 +3,7 @@ package Arrays1;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+//use boolean arrays to store which row and col is 0
 public class Set_Matrix_Zeroes_OP {
     static ArrayList<ArrayList<Integer>> zeroMatrix(ArrayList<ArrayList<Integer>> matrix,int n,int m){
         int rows[] = new int[n];

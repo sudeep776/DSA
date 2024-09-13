@@ -1,6 +1,8 @@
 package Arrays1;
 
-//row col
+//row-n col-c  n-1Cr-1
+// run a loop i=0 to rows-1  -- res * (n-i-1) / i+1
+// 4c2 -- 4 /1 * 3/2 --
 public class Pascal_Triangle {
     public static void main(String[] args) {
         int rows = 4;//rows -1 should be take since formula is r-1Cc-1

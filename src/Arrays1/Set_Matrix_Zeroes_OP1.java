@@ -3,7 +3,12 @@ package Arrays1;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-
+// instead of storing it in the boolean arrays -- we use the first row and col as those to track which rows and cols to be made 0
+// now first step - mark the first row and col by traversing the matrix
+// have a col0 pointer to track 0th col as 0th row is taken from the matrix as both of them intersect
+// second step - now traverse from 1 - n-1 to m-1 and check with 0th row and col for 0 - mark the matrix
+// now if col0 =0 mark the col0 as 0
+// check if 0,0 is 0 then mark entire row as 0
 public class Set_Matrix_Zeroes_OP1 {
     static ArrayList<ArrayList<Integer>> zeroMatrix(ArrayList<ArrayList<Integer>> matrix,int n,int m){
         //traverse the matrix but only set the first row and col - inplace

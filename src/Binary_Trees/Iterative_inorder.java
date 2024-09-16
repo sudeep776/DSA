@@ -1,8 +1,8 @@
 package Binary_Trees;
 
-//Binary Tree
-// root node --- left subtree --- right subtree
-public class Recursive_Preorder {
+import java.util.Stack;
+
+public class Iterative_inorder {
     private TreeNode root;
     public class TreeNode{
         private int data;
@@ -31,15 +31,24 @@ public class Recursive_Preorder {
         third.left=sixth;
         third.right=seventh;
     }
-    public void preOrder(TreeNode root){
-        if(root==null) return;
-        System.out.println(root.data);
-        preOrder(root.left);
-        preOrder(root.right);
+    public void inOrder(TreeNode root){
+        Stack<TreeNode> s1 = new Stack<>();
+        TreeNode temp = root;
+        while(!s1.isEmpty() || temp!=null){
+            if(temp!=null){
+                s1.push(temp);
+                temp=temp.left;
+            }else{
+                temp=s1.pop();
+                System.out.println(temp.data);
+                temp=temp.right;
+            }
+        }
     }
+
     public static void main(String[] args) {
-        Recursive_Preorder p1 = new Recursive_Preorder();
-        p1.createBinaryTree();
-        p1.preOrder(p1.root);
+        Iterative_inorder b1 = new Iterative_inorder();
+        b1.createBinaryTree();
+        b1.inOrder(b1.root);
     }
 }

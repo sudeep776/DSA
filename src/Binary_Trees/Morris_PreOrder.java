@@ -1,7 +1,7 @@
 package Binary_Trees;
 
-public class Morris_Inorder {
-    private TreeNode root;
+public class Morris_PreOrder {
+    TreeNode root;
     public class TreeNode{
         private int data;
         private TreeNode left;
@@ -42,12 +42,12 @@ public class Morris_Inorder {
                     predecessor = predecessor.right;
                 }
                 if(predecessor.right==null){
+                    System.out.println(current.data);
                     predecessor.right=current;
                     current=current.left;
                 }
                 else{
                     predecessor.right=null;
-                    System.out.println(current.data);
                     current=current.right;
                 }
             }

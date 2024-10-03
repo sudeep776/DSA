@@ -70,11 +70,22 @@ public class HashTable {
             head=head.next;
         }
         if(head==null) return null;
+        size--;
         if(previous!=null){
             previous.next=head.next;
         }
         else{
             buckets[bucketIndex]=head.next;
         }return head.value;
+    }
+    public static void main(String[] args) {
+        HashTable table = new HashTable(10);
+        table.put(105, "Tom");
+        table.put(21, "Harry");
+        table.put(31, "Dinesh");
+        System.out.println(table.size());// (31, "Dinesh") -> (21, "Harry") -> null
+        System.out.println(table.remove(21));
+        System.out.println(table.remove(31));
+        System.out.println(table.size());
     }
 }

@@ -42,11 +42,13 @@ public class Morris_PreOrder {
                     predecessor = predecessor.right;
                 }
                 if(predecessor.right==null){
+                    //link the thread
                     System.out.println(current.data);
                     predecessor.right=current;
                     current=current.left;
                 }
                 else{
+                    //remove the threrad
                     predecessor.right=null;
                     current=current.right;
                 }

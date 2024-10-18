@@ -17,7 +17,7 @@ public class Find_repeating {
         //val1 = x-y and val2 = x^2 - y^2
         long val1 = s-sn;
         long val2 = s2-sn2;
-        val2 = val2/val1;
+        val2 = val2/val1; // val2 here is x+y
         long x = (val2+val1)/2;
         long y = x-val1;
         System.out.println(x + " :repeating" + y +" :missing");

@@ -50,8 +50,6 @@ public class Count_Inversions_OP {
         return count;
     }
 
-
-
     public static void main(String[] args) {
         int arr[] = {5,3,2,1,4};
         int count = divide(arr,0,arr.length-1);

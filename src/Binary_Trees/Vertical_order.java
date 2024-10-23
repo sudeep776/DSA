@@ -94,6 +94,7 @@ public class Vertical_order{
             }
         }
 
+
         //prepare the final result
         List<List<Integer>> result = new ArrayList<>();
         for(Map.Entry<Integer,Map<Integer,TreeSet<Integer>>> e1 : nodes.entrySet()){
@@ -111,6 +112,5 @@ public class Vertical_order{
             }
             System.out.println();
         }
-        System.out.println();
     }
 }

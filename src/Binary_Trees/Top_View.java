@@ -55,9 +55,12 @@ public class Top_View {
             TreeNode temp = p.getValue();
 
             //search it in the map if exists
-            if(!nodes.containsKey(vertical)){
-                nodes.put(vertical,temp.data);
-            }
+            //for top view  --
+            //for bottom view -- overwrite it so that
+//            if(!nodes.containsKey(vertical)){
+//                nodes.put(vertical,temp.data);
+//            }
+            nodes.put(vertical,temp.data);
             if(temp.left!=null){
                 todo.add(new Pair<>(vertical - 1, temp.left));
             }

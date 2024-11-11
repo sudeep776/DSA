@@ -47,11 +47,31 @@ public class Detect_cycle {
         }return false;
     }
 
+    public int findStartingPoint(Node head){
+        Node current = head;
+        Node slow = head;
+        Node fast = head;
+        while(fast!=null && fast.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+            if(slow==fast){
+                break;
+            }
+        }
+        fast = head;
+        while(slow!=fast){
+            slow=slow.next;
+            fast=fast.next;
+        }return slow.data;
+    }
+
     public static void main(String[] args) {
         Detect_cycle ll = new Detect_cycle();
         ll.createLL();
 //        ll.display(ll.head);
         Boolean result = ll.detect_cycle(ll.head);
         System.out.println(result);
+        int startingPoint = ll.findStartingPoint(ll.head);
+        System.out.println(startingPoint);
     }
 }

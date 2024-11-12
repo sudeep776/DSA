@@ -8,11 +8,13 @@ public class LL_middle {
         Node three = new Node(3);
         Node four = new Node(4);
         Node five = new Node(5);
+        Node six = new Node(6);
         this.head=new Node(1);
         this.head.next=two;
         two.next=three;
         three.next=four;
         four.next=five;
+        five.next=six;
     }
     public void display(Node head){
         while(head!=null){

@@ -3,6 +3,18 @@ package Arrays4;
 import java.util.HashMap;
 
 public class Largest_subarray_K_sum {
+    private static int LargestLengthBF(int arr[]){
+        int max=0;
+        for(int i=0;i<arr.length;i++){
+            int sum=0;
+            for(int j=i;j<arr.length;j++){
+                sum+=arr[j];
+                if(sum==0){
+                    max=Math.max(max,j=i+1);
+                }
+            }
+        }return max;
+    }
     private static int Largestlength(int arr[],int K){
         HashMap<Integer, Integer> mpp = new HashMap<Integer, Integer>();
         int n = arr.length;

@@ -27,7 +27,7 @@ public class Rotate_LL {
             current=current.next;
         }
     }
-    private Node rotate(Node head,int k){
+    private Node rotatebf(Node head,int k){
         if(head==null||head.next==null)return head;
         for(int i=0;i<k;i++){
             Node temp = head;
@@ -37,10 +37,37 @@ public class Rotate_LL {
             head=end;
         }return head;
     }
+
+    private Node rotateOP(Node head,int k){
+        if(head==null || head.next==null) return head;
+        //get the length of the list
+        Node temp = head;
+        int length=1;
+        while(temp.next!=null){
+            length++;
+            temp=temp.next;
+        }
+
+        //link last node to the first one
+        temp.next=head;
+
+        //if k is more than length of list
+         k=k%length;
+         int end = length-k;
+         while(end--!=0){
+             temp=temp.next;
+         }
+         //
+        head=temp.next;
+         temp.next=null;
+         return head;
+    }
+
     public static void main(String[] args) {
         Rotate_LL ll = new Rotate_LL();
         ll.createLL();
         ll.display(ll.head);
-        ll.rotate(ll.head,2);
+       Node result= ll.rotatebf(ll.head,2);
+       ll.display(result);
     }
 }

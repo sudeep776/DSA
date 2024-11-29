@@ -48,26 +48,23 @@ public class Rotate_LL {
             temp=temp.next;
         }
 
-        //link last node to the first one
+        //link the last node to the head
         temp.next=head;
 
-        //if k is more than length of list
-         k=k%length;
-         int end = length-k;
-         while(end--!=0){
-             temp=temp.next;
-         }
-         //
+        //calculate the k
+        k=k%length;
+        int end = length-k;
+        while(end--!=0)temp=temp.next;
         head=temp.next;
-         temp.next=null;
-         return head;
+        temp.next=null;
+        return head;
     }
 
     public static void main(String[] args) {
         Rotate_LL ll = new Rotate_LL();
         ll.createLL();
         ll.display(ll.head);
-       Node result= ll.rotatebf(ll.head,2);
+       Node result= ll.rotateOP(ll.head,2);
        ll.display(result);
     }
 }

@@ -23,7 +23,7 @@ public class Longest_Substring_Without_Repeat {
             len = Math.max(len,right-left+1);
             right++;
         }
-
+    return len;
     }
 
     private static int longest_substring(String test) {

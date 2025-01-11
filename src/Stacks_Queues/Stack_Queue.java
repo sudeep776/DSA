@@ -3,6 +3,7 @@ package Stacks_Queues;
 import java.util.LinkedList;
 import java.util.Queue;
 
+//Stack using Queue
 class StackQueue{
         Queue<Integer> q = new LinkedList<>();
         void push(int x){
@@ -22,5 +23,5 @@ class StackQueue{
             return q.size();
         }
 }
-public class Queues_Stack {
+public class Stack_Queue {
 }
